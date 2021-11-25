@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trust Bank</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body onload="init()">
+    <div class="container">
+      <div class="form-holder">
+        <div class="img">
+          <img src="/img/male-silhouette.png" alt="" />
+        </div>
+        <br />
+        <form action="" id="form">
+          <div class="input-holder">
+            <i class="fa fa-envelope"></i>
+            <input type="text" id="username" placeholder="Email ID" />
+          </div>
+
+          <div class="input-holder">
+            <i class="fa fa-lock"></i>
+            <input type="text" id="password" placeholder="Password" />
+          </div>
+
+          <div class="password">
+            <label for="" class="remember"
+              ><i class="fa fa-check-square"></i>&nbsp;&nbsp;Remember Me</label
+            >
+            <label for="" class="forgot">Forgot Password?</label>
+          </div>
+          <div class="btn">
+            <button type="submit">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
