@@ -94,6 +94,7 @@ p {
 }
 .btn {
   margin: 20px 0px 0px 0px;
+  position: relative;
 }
 
 .btn button {
@@ -128,6 +129,33 @@ p {
   color: rgb(220, 233, 233);
   text-align: center;
   font-style: italic;
+}
+
+#loading{
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  animation: spin 1s infinite linear;
+  visibility: hidden;
+}
+
+#loading.show{
+  visibility: visible;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 @media only screen and (max-width: 1024px) {
   .form-holder {

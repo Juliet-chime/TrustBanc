@@ -1,5 +1,4 @@
 
-
 const userProfile = () => {
     let information = JSON.parse(localStorage.getItem("userInfo"));
     console.log(information);

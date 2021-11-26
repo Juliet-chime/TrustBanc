@@ -4,6 +4,20 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 let errormsg = document.getElementById("errormsg");
 let nodata = document.getElementById("nodata")
+let loading = document.getElementById("loading")
+
+function displayingLoading () {
+  loading.classList.add("show")
+  // to stop loading after some time
+  setTimeout(()=>{
+    loading.classList.remove("show")
+  },3000)
+}
+
+function hideLoading(){
+  loading.classList.remove("show")
+}
+
 
 const init = () => {
   form.addEventListener("submit", (e) => {
@@ -12,11 +26,12 @@ const init = () => {
     const passTerm = password.value;
 
     if (userTerm === "" && passTerm === "") {
-      setInterval(() => {
-        nodata.innerHTML="Please enter your password and Username "
+      setTimeout(() => {
+        nodata.innerHTML="Enter your password and Username "
       }, 3000);
     }
     else{
+      displayingLoading()
       const data = {
         method: "loginuser",
         username: userTerm,
@@ -36,10 +51,16 @@ const init = () => {
         )
         .then((res) => {
           if(res.success === false){
-            setInterval(() => {
-              errormsg.innerHTML="Wrong username or password "
+          //   function errorMessage(){
+          //     errormsg.innerHTML="Wrong username or password "
+          //   }
+          // let timeOutId =  setTimeout(errorMessage, 3000); 
+          // clearTimeout(timeOutId);
+            setTimeout(() => {
+              errormsg.innerHTML= res.responseMessage
             }, 3000);  
           }else{
+            hideLoading()
             localStorage.setItem("userInfo", JSON.stringify(res.user));
             console.log(res, "fghtrg");
             location.href = "user.html";
